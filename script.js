@@ -13,6 +13,24 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// Prompt for length (minimum 8, maximum 128)
+var chooseLength = prompt("Choose your password length. \nEnter a number between 8 and 128 to indicate your desired password length.");
+if (chooseLength >= 8 && chooseLength <= 128) {
+  var chooseChar = [
+    "Would you like your password to include uppercase letters?",
+    "Would you like your password to include lowercase letters?",
+    "Would you like your password to include numbers?",
+    "Would you like your password to include special characters?"
+  ];
+    for (var i = 0; i < chooseChar.length; i++) {
+    confirm(chooseChar[i]);
+    console.log(chooseChar[i])
+  }
+} else {
+  alert = "Please enter a number between 8 and 128."
+}
+// Prompt for included characters (lower, upper, number, symbol)
+
 // Control password length
 // document.getElementById("length").innerHTML = "Length: 25";
 
