@@ -3,18 +3,24 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-// Character choice strings
-//var randomUpper;
-//const randomLower = "";
-//const randomNumber = "";
-//const randomSymbol = "";
+// Write password to the #password input NOT WORKING
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  
+  passwordText.value = password;
+}
 
 var getLength;
-var getUpper; "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var getUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var upperArr = getUpper.split("");
 var getLower = "abcdefghijklmnopqrstuvwxyz";
+var lowerArr = getLower.split("");
 var getNumber = "0123456789";
+var numberArr = getNumber.split("");
 var getSymbol = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+var symbolArr = getSymbol.split("");
+var getChoices = [];
 var charParameters = [];
 
 function generatePassword() {
@@ -37,8 +43,7 @@ function generatePassword() {
   if (getUpper === true) {
     charParameters = charParameters.concat("uppercase letters");
     console.log("uppercase letters");
-    } else {
-      console.log("");
+    getChoices = getChoices.concat(upperArr);
   }
 
   //Prompt to add lowercase
@@ -47,9 +52,8 @@ function generatePassword() {
   if (getLower === true) {
     charParameters = charParameters.concat("lowercase letters");
     console.log("lowercase letters");
-  } else {
-    console.log("");
-  }
+    getChoices = getChoices.concat(lowerArr);
+  } 
 
   //Prompt to add number
   getNumber = confirm("Click OK to include numbers in your password.");
@@ -57,9 +61,8 @@ function generatePassword() {
   if (getNumber === true) {
     charParameters = charParameters.concat("numbers");
     console.log("numbers");
-  } else {
-    console.log("");
-  }
+    getChoices = getChoices.concat(numberArr);
+  } 
 
   //Prompt to add symbol
   getSymbol = confirm("Click OK to include symbols in your password.");
@@ -67,8 +70,7 @@ function generatePassword() {
   if (getSymbol === true) {
     charParameters = charParameters.concat("symbols");
     console.log("symbols");
-  } else {
-    console.log("");
+    getChoices = getChoices.concat(symbolArr);
   }
 
   //Confirm character selections or alert that parameters haven't been met
@@ -77,28 +79,12 @@ function generatePassword() {
   } else {
     alert("Your password will contain " + charParameters + ".");
   }
-  //buildPassword(getUpper, getLower, getNumber, getSymbol);
-  //return "Password";
-} 
 
-
-//function buildPassword(getUpper, getLower, getNumber, getSymbol) {
-  //console.log(getUpper, getLower, getNumber, getSymbol);
-  //return "Password";
-//}
-
-
-
-
-// Write password to the #password input NOT WORKING
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  for (var i = 0; i < charParameters; i++) {
-    var pickChoices = charParameters[Math.floor(Math.random() * charParameters.length)];
-    password.push(pickChoices);     
-    console.log ;
-  }
-  
-  passwordText.value = password;
+  var password = "";
+    for (var i = 1; i <= getLength; i++) {
+      var randomChar = getChoices[Math.floor(Math.random() * getChoices.length)];
+      password = password + randomChar;
+    }
+    return password;
 }
+  
