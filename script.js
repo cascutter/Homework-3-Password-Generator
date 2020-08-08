@@ -10,6 +10,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// Generate password
 function generatePassword() {
 
   // Variables and arrays for password generator
@@ -34,7 +35,7 @@ var charParameters = [];
   console.log(getLength);
   } else {
     alert("Please select a number between 8 and 128.");
-    return;
+    return "";
   }
 
   //Prompt to add uppercase
@@ -76,12 +77,12 @@ var charParameters = [];
   //Confirm character selections or alert that parameters haven't been met
   if (getUpper === false && getLower === false && getNumber === false && getSymbol === false) {
     alert("You must select at least one character parameter.");
-    window.location.reload(false);
+    return "";
   } else {
     alert("Your password will contain " + charParameters + ".");
   }
  
-  // Generate password into textarea
+  // Get random characaters and return password
   var password = "";
     for (var i = 1; i <= getLength; i++) {
       var randomChar = getChoices[Math.floor(Math.random() * getChoices.length)];
