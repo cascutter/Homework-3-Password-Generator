@@ -34,6 +34,8 @@ This project was created to show an understanding of basic JavaScript knowledge 
 
 ## Features
 
+<img src = "Assets/Password Generator.gif">
+
 * When the 'Generate Password' button is clicked, user is presented with a series of prompts.
 
 * User is prompted to input password length, between 8 and 128 characters.
