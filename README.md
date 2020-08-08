@@ -1,6 +1,6 @@
 # Homework 3: Password Generator
 
-Homework 3: Password Generatorn is an application that generates a random password based on user-selected criteria. It runs in the browser and features dynamic HTML and CSS powered by JavaScript code. 
+Homework 3: Password Generator is an application that generates a random password based on user-selected criteria. It runs in the browser and features dynamic HTML and CSS powered by JavaScript code. 
 
 ## Motivation
 
