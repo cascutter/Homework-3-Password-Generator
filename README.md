@@ -51,7 +51,8 @@ This project was created to show an understanding of basic JavaScript knowledge 
 * HTML and CSS by UTSA Full Stack Bootcamp / Trilogy Edu
 * H/t Traversy Media JavaScript Password Generator YouTube video; TechnicalCafe Random Password Generator Tutorial YouTube video; GitHub; MDN web docs; Celine Ross
 
-
+## License
+MIT
 
 
 
